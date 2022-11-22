@@ -1,0 +1,87 @@
+<html>
+<head>
+
+<title>Amazon Order</title>
+<style>
+
+form {
+
+text-align:center
+}
+
+input{
+width: 50%
+}
+
+input[type=submit] {
+  background-color: green;
+  color: white;
+  width: 10%
+}
+
+select {
+width: 50%;
+}
+label {
+  font-size: 20px;
+  display: inline-block;
+  width: 150px;
+  text-align: right;
+}​
+
+
+</style>
+</head>
+
+<body>
+<center><img src="/static/amazon.png" alt="amazon logo",width="200" height="200"></center>
+<center><h1>Amazon Management</h1></center>
+
+<form action="{{ url_for('predict')}}" method="post">
+
+
+<label for = "fnam">Name</label>
+<input type = 'text' id = 'fnam', name = 'fn', required = 'required', placeholder = "Enter Your Name..." />
+
+<br></br>
+
+<label for="pnum">Phone Number</label>
+<input type="number" id="pnum" name="pnum", required = 'required', placeholder = "Enter Mobile Number..." />
+
+<br></br>
+
+<label for="email">Enter your email:</label>
+<input type="email" id="email" name="email", required = 'required', placeholder = "Enter Your Email..." />
+
+<br></br>
+
+<label for = "order">Pick Your Items</label>
+<select id="order" name="order">
+	  <option value="" disabled selected>Select your option</option>
+      <option value="1">Milk</option>
+      <option value="2">Bread</option>
+      <option value="3">Brown Bread</option>
+	  <option value="4">Egg</option>
+	  <option value="5">Jam</option>
+	  <option value="6">Butter</option>
+</select>
+
+<br></br>
+
+<label for="quantity">Quantity (between 1 and 10):</label>
+<input type="number" id="quantity" name="q" min="1" max="10",
+required = 'required', placeholder = "Select Quantity..."/>
+
+
+<br></br>
+<br></br>
+
+<label></label>
+<input id="submit" type="submit" value="Place Order" ></input>
+
+<center><h1>{{ results}} </h1></center>
+</form>
+
+</body>
+
+</html>
