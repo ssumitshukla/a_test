@@ -5,3 +5,4 @@ joblib==0.16.0
 requests==2.24.0
 gunicorn
 Flask==2.1.0
+gspread==5.7.0
